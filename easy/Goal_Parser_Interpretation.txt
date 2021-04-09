@@ -1,0 +1,23 @@
+class Solution {
+public:
+    string interpret(string command) {
+        string p;
+        for(int i = 0 ; i < command.length() ; ++i)
+        {
+            if(command[i] == '(' && command[i + 1] == 'a')
+            {
+                p += "al";
+                i += 3;
+            }
+            else if(command[i] == '(')
+            {
+                p += 'o';
+                i++;
+            }
+            else{
+                p += command[i];
+            }
+        }
+        return p;
+    }
+};

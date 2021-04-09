@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int numIdenticalPairs(vector<int>& nums) {
+        unordered_map<int, int>u;
+        for(auto i : nums)
+        {
+            u[i]++;
+        }
+        int ans = 0;
+        for(auto x : u)
+        {
+            ans += (x.second * (x.second - 1) / 2);
+        }
+        return ans;
+    }
+};
